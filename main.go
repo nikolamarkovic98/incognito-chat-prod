@@ -17,7 +17,6 @@ func getPort() string {
 	return ":" + port
 }
 
-
 func serve(w http.ResponseWriter, r *http.Request) {
 	var filename string
 
@@ -41,6 +40,6 @@ func main() {
 
 	router.PathPrefix("/").HandlerFunc(serve)
 
-	fmt.Println("Server listening on port 3000")
+	fmt.Println("Server listening on port " + port)
 	http.ListenAndServe(port, router)
 }
