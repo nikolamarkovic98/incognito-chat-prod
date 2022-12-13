@@ -26,6 +26,9 @@ func serve(w http.ResponseWriter, r *http.Request) {
 	} else if strings.Contains(r.URL.Path, ".css") {
 		filename = fmt.Sprintf("./static%s", r.URL.Path)
 		w.Header().Set("Content-Type", "text/css")
+	} else if strings.Contains(r.URL.Path, ".ico") {
+		filename = fmt.Sprintf("./static%s", r.URL.Path)
+		w.Header().Set("Content-Type", "image/x-icon")
 	} else {
 		filename = fmt.Sprintf("./static/index.html")
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
